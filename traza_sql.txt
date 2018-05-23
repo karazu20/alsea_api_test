@@ -1,0 +1,59 @@
+nter password: 
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 4
+Server version: 5.7.22-0ubuntu0.16.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database alsea character set utf8;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> create user ualsea@localhost identified by 'ualsea';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> grant all priveleges on alsea.* to ualsea@localhost
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'priveleges on alsea.* to ualsea@localhost' at line 1
+mysql> grant all privileges on alsea.* to ualsea@localhost;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| alsea              |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.04 sec)
+
+mysql> use alsea;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql>  create table abrahammr ( id int, nombre varchar(50), apellido varchar(50), comentarios varchar(300), creacion datetime, actualizacion datetime, index (id)); Query OK, 0 rows affected (0.14 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_alsea |
++-----------------+
+| abrahammr       |
++-----------------+
+1 row in set (0.02 sec)
+
+mysql> 
+
+
+
